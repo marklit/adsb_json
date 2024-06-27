@@ -1,6 +1,14 @@
 # adsb_json
 
-Extract Features from OpenStreetMap (OSM) PBF files into feature-specific, named GeoPackage Files.
+Enrich ADSB.lol feed and store as 1M-line, GZIP-compressed JSONL files. This enrichment can help turn millions of points into a dataset that is easier to work with and analyse.
+
+This script was used in my [Aircraft Route Analysis](https://tech.marksblogg.com/aircraft-route-analysis-adsb.html) blog post to prepare the dataset that produced the following visualisation.
+
+![YL-AAX Flights for February 2024](YL-AAX.jpg)
+
+The adsb.lol's dataset covers many parts of the world but it, along with any other ADS-B feed, will have gaps in its global coverage. Below is a map of their coverage for November 19, 2023:
+
+![adsb.lol coverage](adsb_h3_5_global.png)
 
 Please read https://tech.marksblogg.com/global-flight-tracking-adsb.html for instructions on download adsb.lol's daily ADS-B feed.
 
