@@ -19,6 +19,7 @@ The following should work on Ubuntu and Ubuntu for Windows.
 ```bash
 $ sudo apt update
 $ sudo apt install \
+    jq \
     pigz \
     python3-pip \
     python3-virtualenv
@@ -35,6 +36,8 @@ If you're using a Mac, install [Homebrew](https://brew.sh/) and then run the fol
 ```bash
 $ brew install \
     git \
+    jq \
+    pigz \
     virtualenv
 
 $ virtualenv ~/.adsb
@@ -47,10 +50,93 @@ $ python -m pip install -r ~/adsb_json/requirements.txt
 
 ## Usage Example
 
-The following should produce 25 enriched, GZIP-compressed JSON files.
+The following will download a 1.9 GB TAR file from the adsb.lol project. It will then enrich the data and produce 25 GZIP-compressed, JSON files.
 
 ```bash
+$ DATE=2024.05.26
+$ wget -c "https://github.com/adsblol/globe_history/releases/download/v$DATE-planes-readsb-prod-0/v$DATE-planes-readsb-prod-0.tar"
+
 $ python main.py v2024.05.26-planes-readsb-prod-0.tar
+```
+
+Each resulting JSON file should be ~40 MB when GZIP-compressed. Below is an example record.
+
+```bash
+$ gunzip -c traces_2024-05-26_0000.jsonl.gz \
+    | head -n1 \
+    | jq -S .
+```
+
+```json
+{
+  "dbFlags": 0,
+  "desc": "ATR-72-600",
+  "icao": "5110e9",
+  "r": "ES-ATE",
+  "reg_details": {
+    "description": "general",
+    "iso2": "EE",
+    "iso3": "EST",
+    "nation": "Estonia"
+  },
+  "t": "AT76",
+  "timestamp": "2024-05-26 00:00:00",
+  "trace": {
+    "aircraft": {
+      "alert": null,
+      "alt_geom": null,
+      "baro_rate": null,
+      "category": null,
+      "emergency": null,
+      "flight": null,
+      "geom_rate": null,
+      "gva": null,
+      "ias": null,
+      "mach": null,
+      "mag_heading": null,
+      "nac_p": null,
+      "nac_v": null,
+      "nav_altitude_fms": null,
+      "nav_altitude_mcp": null,
+      "nav_heading": null,
+      "nav_modes": null,
+      "nav_qnh": null,
+      "nic": null,
+      "nic_baro": null,
+      "oat": null,
+      "rc": null,
+      "roll": null,
+      "sda": null,
+      "sil": null,
+      "sil_type": null,
+      "spi": null,
+      "squawk": null,
+      "tas": null,
+      "tat": null,
+      "track": null,
+      "track_rate": null,
+      "true_heading": null,
+      "type": null,
+      "version": null,
+      "wd": null,
+      "ws": null
+    },
+    "altitude": 850,
+    "flags": 1,
+    "geometric_altitude": null,
+    "geometric_vertical_rate": null,
+    "ground_speed": null,
+    "h3_5": "8508862ffffffff",
+    "indicated_airspeed": null,
+    "lat": 59.662093,
+    "lon": 17.994374,
+    "roll_angle": null,
+    "source": "adsb_icao",
+    "timestamp": "2024-05-26 08:18:34.550000",
+    "track_degrees": null,
+    "vertical_rate": null
+  }
+}
 ```
 
 ## Upgrading Dependencies

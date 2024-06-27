@@ -186,7 +186,7 @@ def process_file(filename:str, progress, task, verbose:bool):
 
 
 @app.command()
-def main(filename:str = 'v2024.05.26-planes-readsb-prod-0.tar',
+def main(filename:str,
          verbose: bool = True):
     # Get total number of JSON files that will be processed so the
     # progress tracker knows ahead of time.
