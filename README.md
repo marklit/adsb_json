@@ -1,6 +1,6 @@
 # adsb_json
 
-Enrich ADSB.lol feed and store as 1M-line, GZIP-compressed JSONL files. This enrichment can help turn millions of points into a dataset that is easier to work with and analyse.
+This script will enrich adsb.lol's feeds and partition them into 1M-line, GZIP-compressed JSONL files. This enrichment can help turn millions of points into a dataset that is easier to work with and analyse.
 
 This script was used in my [Aircraft Route Analysis](https://tech.marksblogg.com/aircraft-route-analysis-adsb.html) blog post to prepare the dataset that produced the following visualisation.
 
