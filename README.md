@@ -10,7 +10,7 @@ The adsb.lol's dataset covers many parts of the world but it, along with any oth
 
 ![adsb.lol coverage](adsb_h3_5_global.png)
 
-Please read https://tech.marksblogg.com/global-flight-tracking-adsb.html for instructions on download adsb.lol's daily ADS-B feed.
+Please read my [Global Flight Tracking](https://tech.marksblogg.com/global-flight-tracking-adsb.html) blog post for instructions on download adsb.lol's daily ADS-B feed.
 
 ## Installation
 
