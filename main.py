@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# pylint: disable=C0116 C0209 R0916 R0912 R0915 R0914 C0201 R1732 W1514 R0913
+# pylint: disable=C0116 C0201 C0209
+# pylint: disable=R0912 R0913 R0914 R0915 R0916 R1732
+# pylint: disable=W1514
 
 "Enrich ADSB.lol feed and store as 1M-line, GZIP-compressed JSONL files"
 
