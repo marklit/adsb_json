@@ -141,8 +141,6 @@ $ gunzip -c traces_2024-05-26_0000.jsonl.gz \
 
 ## Upgrading Dependencies
 
-This project uses DuckDB which has had significant improvements between each of its releases. These releases happen every few weeks to months so it is worth keeping it, as well as the other dependencies, up to date.
-
 If you already have a virtual environment installed then every few weeks, run the following to update the dependencies.
 
 ```bash
