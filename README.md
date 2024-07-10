@@ -42,7 +42,6 @@ $ brew install \
 
 $ virtualenv ~/.adsb
 $ source ~/.adsb/bin/activate
-$ python -m pip install -r requirements.txt
 
 $ git clone https://github.com/marklit/adsb_json ~/adsb_json
 $ python -m pip install -r ~/adsb_json/requirements.txt
